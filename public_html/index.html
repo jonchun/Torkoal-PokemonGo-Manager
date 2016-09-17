@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://getbootstrap.com/examples/sticky-footer/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Torkoal.com - Pokémon GO Web Manager</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class ="toolbar">
+        <div class ="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <h1>Pokémon GO Web Manager</h1>
+            </div>
+            <div class="col-xs-8">     
+                <div class="col-xs-8">
+                  <div class ="navlinks">
+                    <a id="aboutlink" class = "btn btn-info" href="about.html">About</a>
+                    <div id="loggedin" style="display: none;">
+                      <a id="logoutlink" class = "btn btn-warning">Logout</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="ivs col-xs-4">
+                  <div class="col-xs-12">Attack IV <span class="glyphicon glyphicon-fire" aria-hidden="true"></span> </div>
+                  <div class="col-xs-12">Defense IV <span class="glyphicon glyphicon-tower" aria-hidden="true"></span> </div>
+                  <div class="col-xs-12">Stamina IV <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> </div>
+                  <div class="col-xs-12">Candies <span class="glyphicon glyphicon-record" aria-hidden="true"></span></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+    <div id="loading">
+      <div class="loadingimage">
+        <img src ="images/torkoal.gif"><br/>
+        <img class="ellipsis" src="images/ellipsis.svg">
+      </div>
+    </div>
+    <!-- Begin page content -->
+    <div class="container">
+      <div id = "login" style="display: none;">
+          <div id ="loginerror">
+          </div>
+          <h2 class="form-signin-heading">Login to Pokémon GO</h2>
+          <div id="loginbuttons">
+            <a href = "https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&
+redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob
+&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email" target="_blank" class="googleButton" id="googleButton">
+            </a>
+            <div class="ptcButton" id="ptcButton"></div>
+          </div>
+          <div id ="googleLogin" style="display: none;">
+            <form class="form-signin" id="googleForm">
+              <input type="text" id="gcode" class="form-control" placeholder="Authentication Code" required autofocus>
+              <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+          </div>
+          <div id ="ptcLogin" style="display: none;">
+            <form class="form-signin" id="pokegoForm">
+              <input type="text" id="user" class="form-control" placeholder="Username" required autofocus>
+              <input type="password" id="pass" class="form-control" placeholder="Password" required>
+              <button id="loginbutton" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+          </div>
+          <a id="goback" style="display: none;"> Go Back</a>
+      </div>
+      <div id="party" class="row">
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; Copyright 2016 Torkoal.com</p>
+      </div>
+    </footer>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <script type="text/javascript" src="js/mustache.min.js" ></script>
+    <script id="pokemontemplate" type="text/html">
+      <div id = "{{id}}" class ="pokeWrapper {{typeclass}} col-md-2 col-xs-6 col-sm-4">
+        <div class="pokeHeader">          
+          <div class="cp">
+          CP {{cp}}
+          </div>
+          <img src="https://www.torkoal.com/images/pokemon/{{pictureid}}.png">
+          <div class ="caption">
+          <h1>{{nickname}}</h1>
+          </div>
+        </div>
+        <div class="pokeBody">
+        <div class="hpbar progress">
+          <div class="hpbar progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{hppercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{hppercent}}%">
+          </div>
+        </div>
+        <div class="hpbartext">HP {{currenthp}}/{{maxhp}}</div>
+        <div class="movewrapper row">
+          <div class="move col-xs-9">
+            <div>{{m1}}</div>
+            <div class ="movetype">{{m1type}}</div>
+          </div>
+          <div class="col-xs-2">{{m1power}}</div>
+          <div class="col-xs-9">
+            <div>{{m2}}</div>
+            <div class ="movetype">{{m2type}}</div>
+          </div>
+          <div class="col-xs-2">{{m2power}}</div>
+        </div>
+        <div class="ivs row">
+          <div class="col-xs-3"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> {{ivattack}}</div>
+          <div class="col-xs-3"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span>  {{ivdefense}}</div>
+          <div class="col-xs-3"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  {{ivstamina}}</div>
+          <div class="col-xs-3"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>  {{candies}}</div>
+        </div>
+
+        <div class="actions row">
+          <div class="col-xs-12">
+            <a id="evolve{{id}}" class="btn btn-default evolve" >Evolve</a>
+            <a id="transfer{{id}}" class="btn btn-default transfer">Transfer</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-83887446-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+    <script src="js/torkoal.utility.js"></script>
+    <script src="js/torkoal.data.js"></script>
+    <script src="js/torkoal.pokegoweb.js"></script>
+</body></html>

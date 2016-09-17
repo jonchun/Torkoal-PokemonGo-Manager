@@ -1,0 +1,16 @@
+{
+    "name": "pokego-node-api",  
+    "version": "1.0.0",
+    "main": "apiserver.js",
+    "dependencies": {
+        "express": "~4.13.0",
+        "mongoose": "~4.5.0",
+        "body-parser": "~1.15.1",
+        "pogobuf": "~1.1.0",
+        "node-pogo-protos" : "~1.0.3",
+        "long" : "~3.2.0",
+        "striptags" : "~2.1.1",
+        "request" : "~2.74.0"
+    },
+  	"author": "Jonathan Chun (https://github.com/jonchun)"
+}

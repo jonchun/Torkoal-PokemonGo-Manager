@@ -1,0 +1,415 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  background: #ecf0f1;
+  padding-top: 95px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 1200px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#login {
+  text-align: center;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-signin select {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100vh;
+    display:table;
+    width:100%;
+}
+.loadingimage {
+    height:100%;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+  }
+.ellipsis {
+  margin-top: -45px;
+  }
+
+.navlinks {
+  margin-top: 15px;
+}
+
+.navlinks .btn {
+  float: left;
+  margin-right: 5px;
+}
+
+.about {
+  background: #fff;
+  margin-top: -50px;
+  min-height: 50vh;
+}
+
+#loginbuttons {
+  margin-top: 3em;
+}
+
+.googleButton {
+    display: block;
+    margin: auto;
+    background-size: contain;
+    background-image: url('../images/signin/btn_google.png');
+    height: 46px;
+    width: 191px;
+}
+.googleButton:hover {
+    opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+  }
+.ptcButton {
+    margin: auto;
+    background-size: contain;
+    background-image: url('../images/signin/btn_ptc.png');
+    height: 46px;
+    width: 191px;
+}
+.ptcButton:hover {
+    opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+}
+
+#gcode {
+  margin-bottom: 10px;
+}
+
+.goback {
+}
+
+#goback:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 
+Pokemon Specific
+*/
+.toolbar {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 80px;
+  background: #fff;
+  margin: auto;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  width: 100%;
+  z-index: 9999;
+}
+
+.toolbar h1 {
+  font-size: 18px;
+}
+.toolbar .ivs {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .toolbar .ivs {
+    text-align: right;
+    margin-top: 10px;
+    text-align: right;
+    font-size: 14px;
+    white-space: nowrap;
+    right: 25px;
+  }
+}
+
+.toolbar .col-xs-4 {
+  margin: 0;
+}
+
+.pokeWrapper {
+    letter-spacing: .2em;
+    font-size: 12px;
+    padding: 2px;
+}
+
+.pokeWrapper.selected {
+    box-shadow:0px 0px 0px 10px #2980b9 inset;
+
+}
+
+.cp {
+  background: rgba(0, 0, 0, .5);
+  color: #ecf0f1;
+  text-align: center;
+  font-weight: bold;
+  padding: 2px;
+}
+
+.pokeHeader {
+    background: #000;
+    width: 100%;
+    background-position: center; 
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+}
+
+.grass .pokeHeader {
+    background-image: url("../images/types/grass.jpg");
+}
+.fire .pokeHeader {
+    background-image: url("../images/types/fire.jpg");
+}
+.water .pokeHeader {
+    background-image: url("../images/types/water.jpg");
+}
+.bug .pokeHeader {
+    background-image: url("../images/types/bug.jpg");
+}
+.normal .pokeHeader {
+    background-image: url("../images/types/normal.jpg");
+}
+.poison .pokeHeader {
+    background-image: url("../images/types/poison.jpg");
+}
+.fighting .pokeHeader {
+    background-image: url("../images/types/fighting.jpg");
+}
+.electric .pokeHeader {
+    background-image: url("../images/types/electric.jpg");
+}
+.ground .pokeHeader {
+    background-image: url("../images/types/ground.jpg");
+}
+.rock .pokeHeader {
+    background-image: url("../images/types/rock.jpg");
+}
+.psychic .pokeHeader {
+    background-image: url("../images/types/psychic.jpg");
+}
+.ice .pokeHeader {
+    background-image: url("../images/types/ice.jpg");
+}
+.dragon .pokeHeader {
+    background-image: url("../images/types/dragon.jpg");
+}
+.ghost .pokeHeader {
+    background-image: url("../images/types/ghost.jpg");
+}
+
+.fairy .pokeHeader {
+    background-image: url("../images/types/fairy.jpg");
+}
+
+.pokeHeader img {
+    display: block;
+    margin: auto;
+    height: 80px;
+}
+
+.pokeHeader .caption{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background: rgba(255, 255, 255, .5)
+}
+
+.grass .pokeHeader .caption{
+    background: rgba(120, 200, 80, 0.5)
+}
+.fire .pokeHeader .caption{
+  background: rgba(240, 128, 48, 0.5)
+}
+.water .pokeHeader .caption{
+  background: rgba(104, 144, 240, 0.5)
+}
+.bug .pokeHeader .caption{
+  background: rgba(168, 184, 32, .5)
+}
+.normal .pokeHeader .caption{
+  background: rgba(168, 168, 120, 0.5)
+}
+.poison .pokeHeader .caption{
+  background: rgba(90, 54, 150, .5)
+}
+.fighting .pokeHeader .caption{
+  background: rgba(192, 48, 40, 0.5)
+}
+.electric .pokeHeader .caption{
+  background: rgba(248, 208, 48, 0.5)
+}
+.ground .pokeHeader .caption{
+  background: rgba(224, 192, 104, 0.5)
+}
+.rock .pokeHeader .caption{
+  background: rgba(184, 160, 56, 0.5)
+}
+.psychic .pokeHeader .caption{
+  background: rgba(248, 88, 136, 0.5)
+}
+.ice .pokeHeader .caption{
+  background: rgba(152, 216, 216, 0.5)
+}
+.dragon .pokeHeader .caption{
+  background: rgba(112, 56, 248, 0.5)
+}
+.ghost .pokeHeader .caption{
+  background: rgba(112, 88, 152, 0.5)
+}
+.fairy .pokeHeader .caption{
+  background: rgba(238, 153, 172, 0.5)
+}
+
+.pokeHeader h1 {
+    position: relative;
+    text-align: center;
+    letter-spacing: .3em;
+    font-size: 15px;
+    line-height: 30px;
+    color: #ecf0f1;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.pokeBody {
+    background: #fff;
+    height: 145px;
+    padding: 10px;
+}
+
+.hpbar {
+  height: 5px;
+  margin-bottom: 5px;
+}
+
+.hpbartext {
+    position: relative;
+    text-align: center;
+    font-size: 11px;
+}
+
+.movewrapper {
+  margin: 2px;
+  margin-bottom: 5px;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+.move {
+  margin-bottom: 5px;
+}
+
+.movetype {
+  font-size: 9px;
+  color: #7f8c8d;
+}
+
+.ivs {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
+.ivs .col-xs-3 {
+  padding: 0;
+}
+
+.actions {
+  text-align: center;
+}
+
+.actions .btn {
+    display: inline-block;
+    padding: 3px 6px;
+    margin-bottom: 0;
+    font-size: 9px;
+    font-weight: 300;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-color: #ccc;
+}
+
+.actions .btn.evolve {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+.actions .btn.transfer {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;}

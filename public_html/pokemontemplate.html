@@ -1,0 +1,45 @@
+<script id="pokemontemplate" type="text/html">
+  <div id = "{{id}}" class ="pokeWrapper {{typeclass}} col-md-2 col-xs-6 col-sm-4">
+    <div class="pokeHeader">          
+      <div class="cp">
+        CP {{cp}}
+        </div>
+        <img src="http://www.serebii.net/pokemongo/pokemon/{{pictureid}}.png">
+        <div class ="caption">
+        <h1>{{nickname}}</h1>
+        </div>
+      </div>
+      <div class="pokeBody">
+      <div class="hpbar progress">
+        <div class="hpbar progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{hppercent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{hppercent}}%">
+        </div>
+      </div>
+      <div class="hpbartext">HP {{currenthp}}/{{maxhp}}</div>
+      <div class="movewrapper row">
+        <div class="move col-xs-9">
+          <div>{{m1}}</div>
+          <div class ="movetype">{{m1type}}</div>
+        </div>
+        <div class="col-xs-2">{{m1power}}</div>
+        <div class="col-xs-9">
+          <div>{{m2}}</div>
+          <div class ="movetype">{{m2type}}</div>
+        </div>
+        <div class="col-xs-2">{{m2power}}</div>
+      </div>
+      <div class="ivs row">
+        <div class="col-xs-3"><span class="glyphicon glyphicon-fire" aria-hidden="true"></span> {{ivattack}}</div>
+        <div class="col-xs-3"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span>  {{ivdefense}}</div>
+        <div class="col-xs-3"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>  {{ivstamina}}</div>
+        <div class="col-xs-3"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>  {{candies}}</div>
+      </div>
+
+      <div class="actions row">
+        <div class="col-xs-12">
+          <a id="evolve{{id}}" class="btn btn-default evolve" >Evolve</a>
+          <a id="transfer{{id}}" class="btn btn-default transfer">Transfer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
